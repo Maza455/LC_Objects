@@ -64,7 +64,7 @@ document.querySelector('.greenTea').innerContent = 'Black Tea';
 document.querySelector('[data-icedTea]').innerContent = 'Herbal Tea';
 
 // 8. Declare a variable called lastName and add a value to it(value must be a string)
-let lastName = 'Smith';
+let lastName = 'Maza';
 
 // 9. Declare a variable called parentsAge and give it a value of 20(value must be a number)
 let parentsAge = 20;
@@ -197,3 +197,31 @@ function Car(brand, model, year, transmission, drivetrains) {
   this.drivetrains = drivetrains;
 }
 
+// 26. Create 4 objects of your own and print to the console all of the created objects.
+let car1 = new Car('Toyota', 'Camry', 2022, 'Automatic', 'Front-wheel drive');
+let car2 = new Car('Honda', 'Civic', 2021, 'Automatic', 'Front-wheel drive');
+let car3 = new Car('Ford', 'F-150', 2020, 'Automatic', 'Rear-wheel drive');
+let car4 = new Car('Chevrolet', 'Malibu', 2019, 'Automatic', 'Front-wheel drive');
+console.log(car1, car2, car3, car4);
+
+// 27. After, push the 4 objects to an array called 'informationAboutCars'.
+let informationAboutCars = [];
+informationAboutCars.push(car1, car2, car3, car4);
+
+// 28. Create a function that can be used 'globally', the function should return a sentence containing all the properties used inside the object, eg 'The car brand Ford has a model of a Figo that was produced in 2019. It is a manual and is a front wheel drive'
+function carInformation(car) {
+  return `The car brand ${car.brand} has a model of a ${car.model} that was produced in ${car.year}. It is a ${car.transmission} and is a ${car.drivetrains}`;
+}
+
+// 29. Make sure to write the above sentences for each car inside the corresponding h4 elements
+let carInfoElements = document.querySelectorAll('[data-car1], [data-car2], [data-car3], [data-car4]');
+for (let i = 0; i < informationAboutCars.length; i++) {
+  carInfoElements[i].innerContent = carInformation(informationAboutCars[i]);
+}
+
+// 30. Use the array in question10 that you created and create a conditional statement that check if 'BMW' appears in the array. The console should return 'This item does appear in the array' or 'The item does not appear in the array'
+if (coolCars.includes('BMW')) {
+  console.log('This item does appear in the array');
+} else {
+  console.log('The item does not appear in the array');
+}
