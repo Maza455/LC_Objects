@@ -129,7 +129,7 @@ switch (true) {
 }
 
 // 19. USE the variable that you created in question 9 and use a while loop to print each iteration to the console and at that same instance, increase the variable used by 1
-let i = 0;
+let i = 1;
 while (i < parentsAge) {
   console.log(i);
   i++;
@@ -225,3 +225,22 @@ if (coolCars.includes('BMW')) {
 } else {
   console.log('The item does not appear in the array');
 }
+
+//     Create a program that returns the middle value of the current array, if array length is even return 2 numbers, if the array length is odd return 1 number
+let numbers = [5, 18, 14, 16, 2, 1];
+let middleIndex = Math.floor(numbers.length / 2);
+if (numbers.length % 2 === 0) {
+  console.log(numbers[middleIndex - 1], numbers[middleIndex]);
+} else {
+  console.log(numbers[middleIndex]);
+}
+
+// 32. Go back to Question 16 and use the conditional statement you created. The age has to be requested from the user and the message must be written to the html page in the corresponding element
+let age1 = prompt('Enter your age:');
+let message;
+if (age1 < 18) {
+  message = 'Younger than 18';
+} else {
+  message = '18 or older';
+}
+document.getElementById('zuks').innerContent = message;
